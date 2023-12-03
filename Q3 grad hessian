@@ -1,10 +1,16 @@
 import sympy as sp
-x1,x2=sp.symbols('x1, x2')
-fun=100*(x2-x1**2)**2+(1-x1)**2 #objective function
-grad=[sp.diff(fun,x1),sp.diff(fun,x2)]
-hessian=[sp.diff(grad[0],x1),sp.diff(grad[0],x2)],[sp.diff(grad[1],x1),sp.diff(gr
-ad[1],x2)]
-print("gradient:")
-print(grad)
-print("Hessian:")
-print(hessian)
+# Define the variables.
+x1, x2 = sp.symbols('x1 x2')
+# Define the function.
+function = 100*(x2 - x1*2)2 + (1 - x1)*2
+# Calculate the gradient.
+gradient = [sp.diff(function, x1), sp.diff(function, 
+x2)]
+# Calculate the Hessian matrix.
+hessian = [[sp.diff(gradient[0], x1), 
+sp.diff(gradient[0], x2)],
+ sp.diff(gradient[1], x1), sp.diff(gradient[1], 
+x2)]
+# Print the gradient and Hessian.
+print("Gradient: ", gradient)
+print("Hessian: ", hessian)
