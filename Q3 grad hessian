@@ -1,0 +1,10 @@
+import sympy as sp
+x1,x2=sp.symbols('x1, x2')
+fun=100*(x2-x1**2)**2+(1-x1)**2 #objective function
+grad=[sp.diff(fun,x1),sp.diff(fun,x2)]
+hessian=[sp.diff(grad[0],x1),sp.diff(grad[0],x2)],[sp.diff(grad[1],x1),sp.diff(gr
+ad[1],x2)]
+print("gradient:")
+print(grad)
+print("Hessian:")
+print(hessian)
