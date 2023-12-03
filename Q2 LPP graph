@@ -1,0 +1,28 @@
+import matplotlib.pyplot as plt
+import numpy as np
+# x=[3,4,5,6]
+# y=[1,2,3,7]
+x=np.arange(0,10)
+y1=[(9-3*i) for i in x]
+y2=[(8-i*2) for i in x]
+plt.plot(x,y1,ls='dotted',marker='d',c='r',lw='3')
+plt.plot(x,y2,ls='dashed',marker='.',c='b',lw='3')
+# plt.plot(x,y)
+plt.title("Linear search")
+plt.xlabel("roll no")
+plt.ylabel("marks")
+plt.grid(True)
+# plt.xlim(0,10)
+# plt.ylim(0,10)
+plt.show()
+print(x)
+#eq=2*x+3*y
+c1=2
+c2=3
+point=[[0,0],[0,4],[3,0],[2,3]]
+z=[]
+for i in point:
+ val=c1*i[0]+c2*i[1]
+ z.append(val)
+optpoint=point[z.index(max(z))]
+print(f"optimal solution:{optpoint}")
