@@ -1,0 +1,31 @@
+import numpy as np
+import sympy as sy
+def object_fun(x):
+return x**2 + 4*x+ 4
+def gradient (x):
+ return 2*x + 4
+def line_search(initial_x, learning_rate, epsilon):
+ x=initial_x
+ iterate =0
+ 
+ while True:
+ gradient_x =gradient(x)
+ new_x =x- learning_rate * gradient_x
+ 
+ #check for convergence
+ if abs(new_x -x )<epsilon:
+ break
+ x=new_x
+ iterate +=1
+ 
+ return x, object_fun(x),iterate 
+ # initial parameter
+ 
+initial_x= 0.0
+learning_rate= 0.1
+epsilon= 1e-6
+result_x,result_min, iterations=line_search(initial_x,learning_rate,epsilon)
+print(f"Minimum value found at x = {result_x}")
+print(f"Minimum objective function value = {result_min}")
+print(f"iteration: {iterations}")
+ 
